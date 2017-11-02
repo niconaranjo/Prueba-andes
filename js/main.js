@@ -2,6 +2,7 @@
 $(document).ready(function(){
     
     clouds();
+    progressB();
 
 });
 
@@ -26,7 +27,7 @@ function clouds(){
         $( "#cloud-container" ).append('<img class="cloudy" src="img/cloud.png" alt="">');
         arr[i].posx= Math.floor((Math.random() * containerH) + 1);
         arr[i].posy = Math.floor((Math.random() * containerW) + 1);
-        arr[i].vel = Math.floor((Math.random() * 5) + 1);
+        arr[i].vel = Math.floor((Math.random() * 10) + 1);
     }
     
 
@@ -51,12 +52,35 @@ function clouds(){
                 cloudy.item(i).style.left =  arr[i].posy + "px";
                 
             }    
-        }, 500);
+        }, 0);
         
     }
-    setInterval(transition, 500);
+    setInterval(transition, 380);
 
+
+}
+
+function progressB(){
+    var container = document.getElementById('progressB');
+    var puntos = document.getElementById('puntos');
+    var rest = document.getElementById('rest');
     
+    var valuef = 13325;
+    var valn = 12190;
+    var prog = (valn*100)/ valuef;
+
+    puntos.innerHTML = valn;
+    rest.innerHTML = valuef - valn;
+    container.style.width =  prog + "%";
+    function transition() {    
+        valn = valn + 5;
+        puntos.innerHTML = valn;
+        prog = (valn*100)/ valuef;
+        container.style.width =  prog + "%";
+        
+        rest.innerHTML = valuef - valn;
+    }
+    setInterval(transition, 5000);
 
 }
 

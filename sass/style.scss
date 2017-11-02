@@ -1,6 +1,7 @@
 @import url('fonts.css');
 
 $main-color:#6255a0;
+$sec-color:#ed6c2c;
 
 body{
     font-family: 'WorkSans SemiB';
@@ -23,7 +24,7 @@ ul,li{
 .main-nav{
     display: flex;
     flex-direction: column;
-    background-color: #ed6c2c;
+    background-color: $sec-color;
     
     .content{
         max-width: 100%;
@@ -57,7 +58,7 @@ ul,li{
     .container-nav{
         padding: 3px 0px;
         .navbar{
-            background-color: #ed6c2c;
+            background-color: $sec-color;
             
 
             .container-img{
@@ -178,7 +179,81 @@ ul,li{
 
 
 .sections{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 88px;
+
+    .lined{
+        border-left: 1px solid #bbbbbb;//#f2f2f2
+        border-right: 1px solid #bbbbbb;
+    }
+    .section{
+        
+        .title {
+            text-align: center;
+            width: 100%;
+            padding-bottom: 47px;
+            h3{
+                margin: 0 auto;
+                font-size: 32px;
+                font-family: 'WorkSans Ligth';
+                font-weight: 600;
+                color:$main-color; 
+                text-align: center;
+            }
+        }
+
+        .info-bar{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            #puntos{
+                font-family: 'WorkSans Regular';
+                line-height: 80%;
+                color: $sec-color;
+                font-size: 50px;
+            }
+            .info-pts{
+                font-family: 'WorkSans Regular';
+                color: $sec-color;
+                font-size: 17px;
+                padding-bottom: 23px;
+            }
+        }
+
+        .progress{
+            
+            margin: 0 auto;
+            width: 318px;
+            border: 1px solid $sec-color;
+            border-radius: 20px;
+            height: 23px;
+            .progress-bar{
+                
+                background-color: $sec-color;
+            }
+        }
+        
+
+
+        .info-img{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            img{
+                padding: 15px 20px;
+                width: 30%;
+            }
+        }
+            
+    }
     
+
+
 }
 
 
