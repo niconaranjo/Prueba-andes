@@ -1,0 +1,186 @@
+@import url('fonts.css');
+
+$main-color:#6255a0;
+
+body{
+    font-family: 'WorkSans SemiB';
+    padding: 0px;
+    margin: 0px;
+}
+
+ul,li{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.content{
+    max-width: 100%;
+    width: 1100px;
+    margin: 0px auto;
+}
+
+.main-nav{
+    display: flex;
+    flex-direction: column;
+    background-color: #ed6c2c;
+    
+    .content{
+        max-width: 100%;
+        width: 1100px;
+        margin: 0px auto
+    }
+    .nav-social{
+        height: 33.3px;       
+        background-color: $main-color;  
+        
+        
+        .social{
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-content: space-between;
+            padding-right: 10px;
+            
+        }
+        .social i{
+            padding: 10px;
+            color: #ffffff;
+        }
+    }
+
+    .active{
+        background-color: #a13e0e;
+    }
+    
+    .container-nav{
+        padding: 3px 0px;
+        .navbar{
+            background-color: #ed6c2c;
+            
+
+            .container-img{
+                padding-right: 10px;
+            }
+
+            #navbarSupportedContent{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                .alignment{
+                    width: 100%;
+                    
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-content: center;
+                    align-self: center;
+
+                    li{
+                        
+                        border-radius: 10px;
+                        a{
+                            color: #ffffff;
+                            font-family: 'WorkSans SemiB';
+                            font-size: 18px;
+                        }
+                        &:hover{
+                            background-color: #a13e0e;
+                        }
+
+                    }
+                    
+
+                    .logout{
+                        border: 1px solid #fff;
+                        &:hover{
+                            border: 1px solid #a13e0e;
+                            background-color: #fff;
+                            a{
+                                color: #a13e0e;
+
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            .img-andes{
+                padding-left: 20px;
+                border-left: 1px solid  #ffffff 
+            }
+        }
+    }
+}
+
+.main-info{
+    background-color: #9fcdff;
+    overflow: hidden;
+    
+    
+    .cloudy{
+        position: relative;        
+    }
+
+    .container-info{
+        position: relative;
+        z-index: 5;
+        padding: 55px 0px;
+        display: flex;
+        flex-direction: row;
+
+        .info-perfil{
+            display: flex;
+            flex-direction: row;
+            padding-right: 90px;
+            .img-perfil{
+                padding-right: 20px;
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                
+                .title {
+                    font-family: 'WorkSans SemiB';
+                    font-size: 24px;
+                    color:$main-color;
+                }
+                .nombre {
+                    font-family: 'WorkSans Regular';
+                    font-size: 18px;
+                    font-weight: 600;
+                    color:$main-color;
+                }
+            }
+        }
+
+        .info-sec{
+            padding-top:15px; 
+            display: flex;
+            flex-direction: column;
+            font-family: 'WorkSans Ligth';
+            font-size: 20px;
+            font-weight: 600;
+            color:$main-color;
+            line-height: 120%;
+        }
+
+        .pajarito{
+            position: relative;
+            top:30px;
+            left: 110px;
+        }
+
+    }
+}
+
+
+
+.sections{
+    
+}
+
+
+
+
