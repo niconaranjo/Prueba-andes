@@ -114,6 +114,13 @@ ul, li {
       top: 30px;
       left: 110px; }
 
+.cont-sec {
+  height: 792px;
+  background: url(../img/city.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto; }
+
 .sections {
   display: flex;
   flex-direction: row;
@@ -122,46 +129,68 @@ ul, li {
   .sections .lined {
     border-left: 1px solid #bbbbbb;
     border-right: 1px solid #bbbbbb; }
-  .sections .section .title {
-    text-align: center;
-    width: 100%;
-    padding-bottom: 47px; }
-    .sections .section .title h3 {
+  .sections .section {
+    max-height: 492px; }
+    .sections .section .title {
+      text-align: center;
+      width: 100%;
+      padding-bottom: 47px; }
+      .sections .section .title h3 {
+        margin: 0 auto;
+        font-size: 32px;
+        font-family: 'WorkSans Ligth';
+        font-weight: 600;
+        color: #6255a0;
+        text-align: center; }
+    .sections .section .info-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .sections .section .info-bar #puntos {
+        font-family: 'WorkSans Regular';
+        line-height: 80%;
+        color: #ed6c2c;
+        font-size: 50px; }
+      .sections .section .info-bar .info-pts {
+        font-family: 'WorkSans Regular';
+        color: #ed6c2c;
+        font-size: 17px;
+        padding-bottom: 23px; }
+    .sections .section .progress {
       margin: 0 auto;
-      font-size: 32px;
-      font-family: 'WorkSans Ligth';
-      font-weight: 600;
-      color: #6255a0;
+      width: 318px;
+      border: 1px solid #ed6c2c;
+      border-radius: 20px;
+      height: 23px; }
+      .sections .section .progress .progress-bar {
+        background-color: #ed6c2c; }
+    .sections .section hr {
+      margin-top: 60px;
+      width: 80%;
+      border: 0.5px solid #bbbbbb; }
+    .sections .section .falt-punto {
+      color: #b3b3b3;
+      font-size: 16px;
+      width: 100%;
       text-align: center; }
-  .sections .section .info-bar {
+    .sections .section .info-img {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .sections .section .info-img img {
+        padding: 15px 20px;
+        width: 30%; }
+
+.footer {
+  background-color: #1a1a1a;
+  height: 100%; }
+  .footer .info {
+    padding: 31px 0px 41px;
+    color: #fff;
+    font-family: 'WorkSans Ligth';
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    .sections .section .info-bar #puntos {
-      font-family: 'WorkSans Regular';
-      line-height: 80%;
-      color: #ed6c2c;
-      font-size: 50px; }
-    .sections .section .info-bar .info-pts {
-      font-family: 'WorkSans Regular';
-      color: #ed6c2c;
-      font-size: 17px;
-      padding-bottom: 23px; }
-  .sections .section .progress {
-    margin: 0 auto;
-    width: 318px;
-    border: 1px solid #ed6c2c;
-    border-radius: 20px;
-    height: 23px; }
-    .sections .section .progress .progress-bar {
-      background-color: #ed6c2c; }
-  .sections .section .info-img {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    .sections .section .info-img img {
-      padding: 15px 20px;
-      width: 30%; }
+    text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
