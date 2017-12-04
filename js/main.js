@@ -60,11 +60,6 @@ function clouds(){
 
 }
 
-function progressB(valini){
-    
-
-}
-
 google.load('visualization', '1', {
     packages: ['table']
 });
@@ -72,7 +67,7 @@ var visualization;
 
 function drawVisualization() {
     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cp_5XFXu6_Uxkq-yDIjytSXvDGWAxRo2XSPtZgNIIKY/edit?usp=sharing');
-    query.setQuery('SELECT * where A = "Camilo"');
+    query.setQuery('SELECT * where F = "Nicolas" AND G = 1234');
     query.send(handleQueryResponse);
 }
 
@@ -81,12 +76,12 @@ function handleQueryResponse(response) {
         alert('There was a problem with your query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
         return;
     }
+    console.clear();
     var data = response.getDataTable();
     console.log(data)
     console.log(data.Nf[0].c[0].v)
     setSession(data.Nf[0].c[0].v, data.Nf[0].c[1].v, data.Nf[0].c[2].v, data.Nf[0].c[3].v);
-    progressB(data.Nf[0].c[4].v)
-
+   
     var valuef = 13325;
     var valn = data.Nf[0].c[4].v;
     var prog = (valn*100)/ valuef;
