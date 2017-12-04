@@ -60,14 +60,40 @@ function clouds(){
 
 }
 
-function progressB(){
+function progressB(valini){
+    
+
+}
+
+google.load('visualization', '1', {
+    packages: ['table']
+});
+var visualization;
+
+function drawVisualization() {
+    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cp_5XFXu6_Uxkq-yDIjytSXvDGWAxRo2XSPtZgNIIKY/edit?usp=sharing');
+    query.setQuery('SELECT * where A = "Camilo"');
+    query.send(handleQueryResponse);
+}
+
+function handleQueryResponse(response) {
+    if (response.isError()) {
+        alert('There was a problem with your query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+    }
+    var data = response.getDataTable();
+    console.log(data)
+    console.log(data.Nf[0].c[0].v)
+    setSession(data.Nf[0].c[0].v, data.Nf[0].c[1].v, data.Nf[0].c[2].v, data.Nf[0].c[3].v);
+    progressB(data.Nf[0].c[4].v)
+
+    var valuef = 13325;
+    var valn = data.Nf[0].c[4].v;
+    var prog = (valn*100)/ valuef;
+    
     var container = document.getElementById('progressB');
     var puntos = document.getElementById('puntos');
     var rest = document.getElementById('rest');
-    
-    var valuef = 13325;
-    var valn = 12190;
-    var prog = (valn*100)/ valuef;
 
     puntos.innerHTML = valn;
     rest.innerHTML = valuef - valn;
@@ -81,6 +107,19 @@ function progressB(){
         rest.innerHTML = valuef - valn;
     }
     setInterval(transition, 5000);
-
+    
 }
+google.setOnLoadCallback(drawVisualization);
 
+function setSession(nombreS, apellidoS, correoS, facultadS){
+
+    var nombre = document.getElementById('nombre');
+    nombre.innerHTML = nombreS + " " + apellidoS ;
+    
+    var correo = document.getElementById('correo');
+    correo.innerHTML = correoS;
+    
+    var facultad = document.getElementById('facultad');
+    facultad.innerHTML = facultadS;
+ 
+}
