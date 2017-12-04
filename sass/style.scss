@@ -343,3 +343,91 @@ ul,li{
 #alerta1{
     display: none;
 }
+
+.princ-cont{
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .bal1{
+        position: absolute;
+        //border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        top: 25px;
+        #barra_izq{
+            position: absolute;
+            left: 60px;
+        }
+        #barra_info{
+            position: absolute;;
+            height: 162px;
+        }
+        input{
+            position: absolute;
+            width: 30px;
+            top:126px;
+            left:45px;
+            background-color: transparent;
+            border:0px;
+            color:#ED6C2C;
+            text-align: right;
+        }
+        label{
+            position: absolute;
+            width: 40px;
+            top:126px;
+            left:75px;
+            background-color: transparent;
+            border:0px;
+            color:#ED6C2C;
+        }
+    }
+
+    .base{
+        position: absolute;
+        left:80.5px;
+        top:8px;
+    }
+
+    .bal2{
+        position: absolute;
+        //border: 1px solid black;
+        left: 196px;
+
+        top:25px;
+        #barra_der{
+            position: absolute;
+            transform: rotate(0deg)
+            
+        }
+        #barra_info_der{
+            position: absolute;;
+            height: 162px;
+            top: 0px;
+            left: 12px;
+        }
+
+        input{
+            position: absolute;
+            width: 30px;
+            top:126px;
+            left:50px;
+            background-color: transparent;
+            border:0px;
+            color:#6255A0;
+            text-align: right;
+        }
+        label{
+            position: absolute;
+            width: 40px;
+            top:126px;
+            left:80px;
+            background-color: transparent;
+            border:0px;
+            color:#6255A0;
+        }
+    }
+
+}

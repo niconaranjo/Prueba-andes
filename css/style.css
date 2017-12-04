@@ -225,4 +225,70 @@ ul, li {
 #alerta1 {
   display: none; }
 
+.princ-cont {
+  display: flex;
+  flex-direction: row;
+  position: relative; }
+  .princ-cont .bal1 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25px; }
+    .princ-cont .bal1 #barra_izq {
+      position: absolute;
+      left: 60px; }
+    .princ-cont .bal1 #barra_info {
+      position: absolute;
+      height: 162px; }
+    .princ-cont .bal1 input {
+      position: absolute;
+      width: 30px;
+      top: 126px;
+      left: 45px;
+      background-color: transparent;
+      border: 0px;
+      color: #ED6C2C;
+      text-align: right; }
+    .princ-cont .bal1 label {
+      position: absolute;
+      width: 40px;
+      top: 126px;
+      left: 75px;
+      background-color: transparent;
+      border: 0px;
+      color: #ED6C2C; }
+  .princ-cont .base {
+    position: absolute;
+    left: 80.5px;
+    top: 8px; }
+  .princ-cont .bal2 {
+    position: absolute;
+    left: 196px;
+    top: 25px; }
+    .princ-cont .bal2 #barra_der {
+      position: absolute;
+      transform: rotate(0deg); }
+    .princ-cont .bal2 #barra_info_der {
+      position: absolute;
+      height: 162px;
+      top: 0px;
+      left: 12px; }
+    .princ-cont .bal2 input {
+      position: absolute;
+      width: 30px;
+      top: 126px;
+      left: 50px;
+      background-color: transparent;
+      border: 0px;
+      color: #6255A0;
+      text-align: right; }
+    .princ-cont .bal2 label {
+      position: absolute;
+      width: 40px;
+      top: 126px;
+      left: 80px;
+      background-color: transparent;
+      border: 0px;
+      color: #6255A0; }
+
 /*# sourceMappingURL=style.css.map */
