@@ -16,31 +16,43 @@
 </head>
 
 <body class="body-form">
-  <div class="contenedor cont-sec">
+  <div class="contenedor cont-sec" id="main-info">
+    <div class="clouds" id="cloud-container">
 
+    </div>
 
-    <div class="formulario">
+    <div class="formulario" id="inisec" >
       <form>
+          
+        <div class="form-head">
+          <img src="img/logo_cupi.png"   alt="">
+          <img src="img/logo_andes.png" width="33" height="38" alt="">
+        </div><br><br>
+        <div class="alert alert-danger" role="alert" id="alerta1">
+            Por favor revise sus datos
+          </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label for="exampleInputEmail1">Nombre de usuario</label>
+          <input type="email" class="form-control" id="nombreUS" aria-describedby="emailHelp" placeholder="Ingrese Nombre">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" id="contraUS" placeholder="1234">
         </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input"> Check me out
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      <button class="btn btn-primary" onclick="login()">Ingresar</button>
     </div>
 
   </div>
-
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+  <script src="js/session.js"></script>
 </body>
 
 </html>

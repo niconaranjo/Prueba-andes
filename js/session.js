@@ -2,11 +2,33 @@
 $(document).ready(function(){
     
     clouds();
+    session();
+    window.onresize = resize;
 
 });
 
 
+function resize()
+{
+    
+    session()
+
+
+}
+
+function session(){
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var iniW = document.getElementById('inisec').offsetWidth;
+    var iniH = document.getElementById('inisec').offsetHeight;
+    var obj = document.getElementById('inisec');
+    obj.style.top = (h/2) - (iniH/2)      + "px";
+    obj.style.left =  (w/2) - (iniW/2)  + "px";
+    
+}
+
 function clouds(){
+
     var container = document.getElementById('cloud-container');
     var arr = [{
         posx:0,
@@ -24,7 +46,7 @@ function clouds(){
             vel:0
         };
         $( "#cloud-container" ).append('<img class="cloudy" src="img/cloud.png" alt="">');
-        arr[i].posx= Math.floor((Math.random() * containerH) + 1);
+        arr[i].posx= Math.floor((Math.random() * containerH/2) + 1);
         arr[i].posy = Math.floor((Math.random() * containerW) + 1);
         arr[i].vel = Math.floor((Math.random() * 10) + 1);
     }
@@ -58,65 +80,49 @@ function clouds(){
 
 
 }
-
 google.load('visualization', '1', {
     packages: ['table']
 });
 var visualization;
+function login(){
+    var name = document.getElementById('nombreUS').value;
+    var contra = document.getElementById('contraUS').value;
+    
+    if( name == "" || contra =="" ){
+       
+        var er = document.getElementById('alerta1');
+        er.style.display =  "block";
+        setTimeout(function(){ 
+            er.style.display =  "none";
+        }, 3000);
 
-function drawVisualization() {
-    var url = new URL(location.href);
-    var nombre = url.searchParams.get("nombre");
-    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cp_5XFXu6_Uxkq-yDIjytSXvDGWAxRo2XSPtZgNIIKY/edit?usp=sharing');
-    query.setQuery('SELECT * where A = "'+nombre+'" ');
-    query.send(handleQueryResponse);
+    }else{
+        var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1cp_5XFXu6_Uxkq-yDIjytSXvDGWAxRo2XSPtZgNIIKY/edit?usp=sharing');
+        query.setQuery('SELECT * where F = "'+name+'" AND G = '+contra+'');
+        query.send(handleQueryResponse);
+    }
+    
 }
+
+
 
 function handleQueryResponse(response) {
     if (response.isError()) {
         alert('There was a problem with your query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
         return;
     }
-    //console.clear();
+    
     var data = response.getDataTable();
     //console.log(data)
-    //console.log(data.Nf[0].c[0].v)
-    setSession(data.Nf[0].c[0].v, data.Nf[0].c[1].v, data.Nf[0].c[2].v, data.Nf[0].c[3].v);
-   
-    var valuef = 13325;
-    var valn = data.Nf[0].c[4].v;
-    var prog = (valn*100)/ valuef;
-    
-    var container = document.getElementById('progressB');
-    var puntos = document.getElementById('puntos');
-    var rest = document.getElementById('rest');
-
-    puntos.innerHTML = valn;
-    rest.innerHTML = valuef - valn;
-    container.style.width =  prog + "%";
-    function transition() {    
-        valn = valn + 5;
-        puntos.innerHTML = valn;
-        prog = (valn*100)/ valuef;
-        container.style.width =  prog + "%";
-        
-        rest.innerHTML = valuef - valn;
+    if(data.Nf.length>0){
+        window.location = "perfil.html?nombre="+ data.Nf[0].c[0].v +"";
+    }else{
+        var er = document.getElementById('alerta1');
+        er.style.display =  "block";
+        setTimeout(function(){ 
+            er.style.display =  "none";
+        }, 3000);
     }
-    setInterval(transition, 5000);
+    
     
 }
-google.setOnLoadCallback(drawVisualization);
-
-function setSession(nombreS, apellidoS, correoS, facultadS){
-
-    var nombre = document.getElementById('nombre');
-    nombre.innerHTML = nombreS + " " + apellidoS ;
-    
-    var correo = document.getElementById('correo');
-    correo.innerHTML = correoS;
-    
-    var facultad = document.getElementById('facultad');
-    facultad.innerHTML = facultadS;
- 
-}
-
